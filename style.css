@@ -1,33 +1,673 @@
+/*
+  TYEE WORD LADDER — STYLESHEET
 
-:root{color-scheme:dark;font-family:Arial,Helvetica,sans-serif;color:#eeeae2;background:#19191b;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input,summary{font:inherit}button,summary{cursor:pointer}button{min-height:46px;border:0;border-radius:8px;background:#a52b37;color:#fff3eb;padding:11px 18px;font-weight:700}button:hover{filter:brightness(1.12)}button:disabled{opacity:.4;cursor:default}button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #edc465;outline-offset:4px}header{max-width:1240px;margin:auto;padding:27px 44px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #3e3b3b}.brand{display:flex;gap:12px;text-decoration:none;align-items:center;color:inherit;font-size:25px;font-weight:900;letter-spacing:2px}.brand small{display:block;font-size:9px;letter-spacing:1.4px;margin-top:5px}.crest{background:#a52b37;color:#edc465;width:42px;height:49px;display:grid;place-items:center;clip-path:polygon(0 0,100% 0,100% 75%,50% 100%,0 75%);font-family:Georgia,serif}.edition{font-size:9px;letter-spacing:1.5px;color:#aaa5a0}main{max-width:1120px;margin:64px auto 70px;display:grid;grid-template-columns:1fr 1.12fr;gap:90px;padding:0 40px}.intro{padding-top:28px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;margin:0 0 16px;color:#cbb77f}h1{font-family:Georgia,serif;font-size:clamp(42px,5vw,66px);line-height:1.07;font-weight:400;letter-spacing:-2.2px;margin:0 0 26px}.intro>p:not(.eyebrow){line-height:1.8;color:#bdb7b0;font-size:16px}.example{display:inline-flex;gap:15px;background:#252528;border:1px solid #49423a;padding:19px 20px;border-radius:8px;letter-spacing:2px;font-size:13px;font-weight:700;margin:20px 0 27px}.example span{color:#d9b75f}details{max-width:350px;font-size:13px;line-height:1.8;border-top:1px solid #3e3b3b;padding:18px 0}summary{font-weight:700}.intro .note{font-size:12px!important;margin-top:28px}.game{background:#242426;border:1px solid #484044;border-radius:18px;padding:25px 30px;box-shadow:0 15px 45px #00000030}.modes{display:flex;background:#19191b;padding:4px;border-radius:10px;margin-bottom:28px}.modes button{flex:1;background:transparent;color:#bbb5af;font-size:12px;min-height:40px;padding:9px}.modes button[aria-pressed=true]{background:#a52b37;color:#fff3eb;box-shadow:0 2px 5px #00000030}.game-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.game-head .eyebrow{font-size:9px;margin-bottom:8px}h2{font-family:Georgia,serif;font-size:27px;font-weight:400;margin:0}.badge{font-size:10px;border:1px solid #76613a;border-radius:20px;padding:7px 10px;color:#edc465}.route{margin:24px 0;display:flex;align-items:center;justify-content:space-between;background:#1c1c1f;border-radius:10px;padding:17px 22px}.route span{font-size:9px;letter-spacing:1px;color:#b9b1a8}.route b{display:block;font-size:23px;letter-spacing:6px;color:#f0e7d8;margin-top:7px}.route .route-arrow{font-size:25px;color:#edc465}.ladder-heading{display:flex;justify-content:space-between;font-size:9px;letter-spacing:1.3px;color:#b7b0a8;margin-bottom:14px}#moves{letter-spacing:0;font-size:11px}ol{list-style:none;padding:0;margin:0 0 18px;max-height:300px;overflow:auto}li{display:flex;align-items:center;gap:9px;margin:8px 0}.step{width:30px;font-size:10px;color:#b7b0a8}.tile{display:inline-grid;place-items:center;width:46px;height:46px;border:1px solid #696264;border-radius:7px;background:#303033;font-size:22px;font-weight:700}.changed{background:#55442a;border-color:#bd9452}.current .tile{border-bottom:3px solid #edc465}.step-label{font-size:9px;letter-spacing:1px;color:#edc465;margin-left:4px}label{display:block;font-size:12px;font-weight:700;margin-bottom:9px}.entry{display:flex;gap:10px}input{width:100%;min-width:0;min-height:50px;border:1px solid #8c8080;border-radius:8px;padding:10px 14px;text-transform:uppercase;letter-spacing:8px;font-weight:700;font-size:21px}input::placeholder{color:#aaa09b}.entry button{#fff3eb-space:nowrap;font-size:12px}.entry button span{margin-left:12px}#feedback{font-size:12px;line-height:1.6;min-height:38px;margin:12px 0 4px;color:#c9bda6}#feedback.error{color:#ffaaa4}.actions{display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid #484044;padding-top:6px}.quiet{background:transparent;color:#d2c5b2;font-size:11px;padding:10px 8px}.save-note{font-size:9px;color:#b0a7a0;text-align:center;line-height:1.6;margin:14px 0 0}#win{background:#342e24;padding:16px;border-radius:10px;margin-top:14px}#win h3{font-family:Georgia,serif;font-size:23px;margin:0 0 10px}#win p{font-size:12px;line-height:1.7}#win button{font-size:11px}#solution{overflow-wrap:anywhere}footer{max-width:1152px;border-top:1px solid #3e3b3b;margin:auto;padding:22px 28px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:1.3px;color:#aaa5a0}[hidden]{display:none!important}@media(max-width:760px){header{padding:20px 22px}.edition{display:none}main{grid-template-columns:1fr;gap:26px;margin:20px auto 36px;padding:0 18px;max-width:520px}.intro{padding:8px 5px}.intro h1{font-size:43px;margin-bottom:14px}.intro>p:not(.eyebrow){font-size:14px}.intro h1 br{display:none}.example{margin:5px 0 14px;padding:12px 15px}.intro .note{display:none}.intro details{padding:12px 0;max-width:none}.game{padding:20px}.entry button{padding:10px 12px}footer{margin:0 22px;padding:20px 0;gap:15px}.tile{width:43px;height:43px}}@media(prefers-reduced-motion:no-preference){li{animation:appear .18s ease-out}@keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}}
+  Reading a CSS rule:
+    selector { property: value; }
 
+  A tag name (button) selects that kind of HTML element.
+  A dot (.tile) selects a class. A hash (#feedback) selects an id.
+  Rules below are grouped by the part of the page they style.
+*/
 
-/* Tyee dark theme: charcoal surfaces, school-red actions, warm gold guidance. */
-body{min-height:100vh;border-top:4px solid #a52b37;background:radial-gradient(ellipse at 14% 10%,#332327 0,transparent 48%),#19191b}
-h1,h2,#win h3{font-family:Arial,Helvetica,sans-serif;font-weight:800;letter-spacing:-1.2px}
-h1{line-height:1.08}h1::after{content:"";display:block;width:54px;height:4px;background:#edc465;margin-top:26px;border-radius:2px}
-.brand{color:#f0e7d8}.brand small{color:#bdb7b0}.crest{font-weight:900;font-family:Arial,Helvetica,sans-serif}
-.intro strong,.example{color:#edc465}.game{border-top:3px solid #a52b37;box-shadow:0 20px 60px #00000035}
-.route span:last-child b{color:#edc465}.route{border:1px solid #49423a}
-input{background:#19191b;color:#f0e7d8;caret-color:#edc465}input:focus{border-color:#edc465}
-.changed{color:#ffe2a0}.current .tile{box-shadow:0 3px 10px #00000020}
-summary{color:#edc465}.quiet:hover{background:#373234;filter:none}button:hover:not(:disabled):not(.quiet){filter:brightness(1.16)}button:disabled{opacity:.55}
-#win{border:1px solid #76613a}#win h3{color:#edc465}#feedback.error{font-weight:700}
-::selection{background:#a52b37;color:#fff3eb}ol{scrollbar-color:#76613a #242426}
-@media(forced-colors:active){.changed,.current .tile{border:2px solid Highlight}button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline-color:Highlight}}
-
-.school-logo{display:block;width:64px;height:64px;object-fit:contain;flex-shrink:0}.brand{gap:16px}@media(max-width:760px){.school-logo{width:54px;height:54px}.brand{gap:12px}}
-/* Readable school identity and page framing at every screen size. */
-header{gap:28px;flex-wrap:wrap}
-.brand{font-size:34px;line-height:1.15;letter-spacing:2px}
-.brand small{font-size:13px;line-height:1.5;letter-spacing:1.2px;margin-top:7px}
-.edition{font-size:13px;line-height:1.6;letter-spacing:1px;max-width:360px;color:#bdb7b0}
-footer{font-size:14px;line-height:1.6;letter-spacing:1px;flex-wrap:wrap;gap:12px 28px;color:#bdb7b0}
-@media(max-width:760px){
- header{gap:16px}
- .brand{font-size:30px}
- .brand small{font-size:12px;letter-spacing:.7px}
- .edition{display:block;font-size:12px;max-width:none;letter-spacing:.6px}
- footer{font-size:13px;letter-spacing:.5px;gap:8px 20px}
+/* 1. PAGE DEFAULTS
+   Children inherit the font and text color unless another rule changes them.
+   Our palette uses charcoal surfaces, school red, warm gold, and soft white. */
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #eeeae2;
+  background: #19191b;
+  font-synthesis: none;
 }
-@media(max-width:360px){.brand{font-size:28px}.brand small{font-size:11px;letter-spacing:.3px}}
+
+/* Include padding and borders inside each element's declared width. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  border-top: 4px solid #a52b37;
+  background:
+    radial-gradient(ellipse at 14% 10%, #332327 0, transparent 48%),
+    #19191b;
+}
+
+button,
+input,
+summary {
+  font: inherit;
+}
+
+button,
+summary {
+  cursor: pointer;
+}
+
+/* 2. BUTTONS AND KEYBOARD ACCESS
+   These shared button styles are refined for specific controls below. */
+button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 8px;
+  background: #a52b37;
+  color: #fff3eb;
+  padding: 11px 18px;
+  font-weight: 700;
+}
+
+/* A pseudo-class, such as :hover, selects an element in a particular state. */
+button:hover {
+  filter: brightness(1.12);
+}
+
+button:hover:not(:disabled):not(.quiet) {
+  filter: brightness(1.16);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* Keep a visible focus ring for people navigating with a keyboard. */
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+a:focus-visible {
+  outline: 3px solid #edc465;
+  outline-offset: 4px;
+}
+
+/* 3. HEADER AND SCHOOL IDENTITY
+   Flexbox places the logo and text beside one another and allows wrapping. */
+header {
+  max-width: 1240px;
+  margin: auto;
+  padding: 27px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #3e3b3b;
+}
+
+.brand {
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+  align-items: center;
+  color: #f0e7d8;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 2px;
+}
+
+.brand small {
+  display: block;
+  color: #bdb7b0;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 1.2px;
+  margin-top: 7px;
+}
+
+.school-logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.edition {
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  max-width: 360px;
+  color: #bdb7b0;
+}
+
+/* 4. MAIN LAYOUT AND INTRODUCTION
+   Grid creates two columns. The game column is slightly wider (1.12fr).
+   A media query near the end switches to one column on smaller screens. */
+main {
+  max-width: 1120px;
+  margin: 64px auto 70px;
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  gap: 90px;
+  padding: 0 40px;
+}
+
+.intro {
+  padding-top: 28px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 16px;
+  color: #cbb77f;
+}
+
+h1,
+h2,
+#win h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+h1 {
+  /* clamp sets a minimum, a size that follows the viewport, and a maximum. */
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.08;
+  margin: 0 0 26px;
+}
+
+/* ::after adds the decorative gold underline without another HTML element. */
+h1::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 4px;
+  background: #edc465;
+  margin-top: 26px;
+  border-radius: 2px;
+}
+
+h2 {
+  font-size: 27px;
+  margin: 0;
+}
+
+/* > selects direct children; :not excludes the small eyebrow paragraph. */
+.intro > p:not(.eyebrow) {
+  line-height: 1.8;
+  color: #bdb7b0;
+  font-size: 16px;
+}
+
+.intro strong,
+.example {
+  color: #edc465;
+}
+
+.example {
+  display: inline-flex;
+  gap: 15px;
+  background: #252528;
+  border: 1px solid #49423a;
+  padding: 19px 20px;
+  border-radius: 8px;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 20px 0 27px;
+}
+
+.example span {
+  color: #d9b75f;
+}
+
+details {
+  max-width: 350px;
+  font-size: 13px;
+  line-height: 1.8;
+  border-top: 1px solid #3e3b3b;
+  padding: 18px 0;
+}
+
+summary {
+  font-weight: 700;
+  color: #edc465;
+}
+
+.intro .note {
+  /* Keep this helper note smaller than the general introduction paragraphs. */
+  font-size: 12px !important;
+  margin-top: 28px;
+}
+
+/* 5. GAME PANEL, MODE BUTTONS, AND START/DESTINATION DISPLAY */
+.game {
+  background: #242426;
+  border: 1px solid #484044;
+  border-top: 3px solid #a52b37;
+  border-radius: 18px;
+  padding: 25px 30px;
+  box-shadow: 0 20px 60px #00000035;
+}
+
+.modes {
+  display: flex;
+  background: #19191b;
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 28px;
+}
+
+.modes button {
+  flex: 1;
+  background: transparent;
+  color: #bbb5af;
+  font-size: 12px;
+  min-height: 40px;
+  padding: 9px;
+}
+
+/* JavaScript updates this attribute when the player switches modes. */
+.modes button[aria-pressed="true"] {
+  background: #a52b37;
+  color: #fff3eb;
+  box-shadow: 0 2px 5px #00000030;
+}
+
+.game-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.game-head .eyebrow {
+  font-size: 9px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  font-size: 10px;
+  border: 1px solid #76613a;
+  border-radius: 20px;
+  padding: 7px 10px;
+  color: #edc465;
+}
+
+.route {
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1c1c1f;
+  border: 1px solid #49423a;
+  border-radius: 10px;
+  padding: 17px 22px;
+}
+
+.route span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #b9b1a8;
+}
+
+.route b {
+  display: block;
+  font-size: 23px;
+  letter-spacing: 6px;
+  color: #f0e7d8;
+  margin-top: 7px;
+}
+
+.route span:last-child b {
+  color: #edc465;
+}
+
+.route .route-arrow {
+  font-size: 25px;
+  color: #edc465;
+}
+
+/* 6. WORD LADDER AND LETTER TILES
+   app.js builds these elements and adds state classes after each move. */
+.ladder-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  color: #b7b0a8;
+  margin-bottom: 14px;
+}
+
+#moves {
+  letter-spacing: 0;
+  font-size: 11px;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  max-height: 300px;
+  overflow: auto;
+  scrollbar-color: #76613a #242426;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 8px 0;
+}
+
+.step {
+  width: 30px;
+  font-size: 10px;
+  color: #b7b0a8;
+}
+
+.tile {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #696264;
+  border-radius: 7px;
+  background: #303033;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* A changed letter gets a gold background; the newest row gets an underline. */
+.changed {
+  background: #55442a;
+  border-color: #bd9452;
+  color: #ffe2a0;
+}
+
+.current .tile {
+  border-bottom: 3px solid #edc465;
+  box-shadow: 0 3px 10px #00000020;
+}
+
+.step-label {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #edc465;
+  margin-left: 4px;
+}
+
+/* 7. WORD ENTRY, FEEDBACK, AND SECONDARY ACTIONS */
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.entry {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  min-width: 0;
+  min-height: 50px;
+  border: 1px solid #8c8080;
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-weight: 700;
+  font-size: 21px;
+  background: #19191b;
+  color: #f0e7d8;
+  caret-color: #edc465;
+}
+
+input:focus {
+  border-color: #edc465;
+}
+
+input::placeholder {
+  color: #aaa09b;
+}
+
+.entry button {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.entry button span {
+  margin-left: 12px;
+}
+
+#feedback {
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 38px;
+  margin: 12px 0 4px;
+  color: #c9bda6;
+}
+
+/* This rule applies only when JavaScript adds the "error" class. */
+#feedback.error {
+  color: #ffaaa4;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-top: 1px solid #484044;
+  padding-top: 6px;
+}
+
+.quiet {
+  background: transparent;
+  color: #d2c5b2;
+  font-size: 11px;
+  padding: 10px 8px;
+}
+
+.quiet:hover {
+  background: #373234;
+  filter: none;
+}
+
+.save-note {
+  font-size: 9px;
+  color: #b0a7a0;
+  text-align: center;
+  line-height: 1.6;
+  margin: 14px 0 0;
+}
+
+/* 8. RESULTS AND FOOTER */
+#win {
+  background: #342e24;
+  border: 1px solid #76613a;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 14px;
+}
+
+#win h3 {
+  font-size: 23px;
+  color: #edc465;
+  margin: 0 0 10px;
+}
+
+#win p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#win button {
+  font-size: 11px;
+}
+
+#solution {
+  overflow-wrap: anywhere;
+}
+
+footer {
+  max-width: 1152px;
+  border-top: 1px solid #3e3b3b;
+  margin: auto;
+  padding: 22px 28px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  color: #bdb7b0;
+}
+
+::selection {
+  background: #a52b37;
+  color: #fff3eb;
+}
+
+/* Honor the HTML hidden attribute even when another rule sets display. */
+[hidden] {
+  display: none !important;
+}
+
+/* 9. RESPONSIVE DESIGN
+   These rules apply only at the stated viewport width.
+   Later rules can override earlier rules when their specificity is equal.
+   For example, the .brand font size changes from 34px to 30px below. */
+@media (max-width: 760px) {
+  header {
+    padding: 20px 22px;
+    gap: 16px;
+  }
+
+  .school-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .brand {
+    gap: 12px;
+    font-size: 30px;
+  }
+
+  .brand small {
+    font-size: 12px;
+    letter-spacing: 0.7px;
+  }
+
+  .edition {
+    display: block;
+    font-size: 12px;
+    max-width: none;
+    letter-spacing: 0.6px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin: 20px auto 36px;
+    padding: 0 18px;
+    max-width: 520px;
+  }
+
+  .intro {
+    padding: 8px 5px;
+  }
+
+  .intro h1 {
+    font-size: 43px;
+    margin-bottom: 14px;
+  }
+
+  .intro > p:not(.eyebrow) {
+    font-size: 14px;
+  }
+
+  .intro h1 br {
+    display: none;
+  }
+
+  .example {
+    margin: 5px 0 14px;
+    padding: 12px 15px;
+  }
+
+  .intro .note {
+    display: none;
+  }
+
+  .intro details {
+    padding: 12px 0;
+    max-width: none;
+  }
+
+  .game {
+    padding: 20px;
+  }
+
+  .entry button {
+    padding: 10px 12px;
+  }
+
+  footer {
+    margin: 0 22px;
+    padding: 20px 0;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    gap: 8px 20px;
+  }
+
+  .tile {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+/* Very narrow screens need a slightly smaller school label. */
+@media (max-width: 360px) {
+  .brand {
+    font-size: 28px;
+  }
+
+  .brand small {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* 10. MOTION AND ACCESSIBILITY PREFERENCES
+   Animate new rows only when the user has not requested reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  li {
+    animation: appear 0.18s ease-out;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Use the user's system highlight color in forced-colors display modes. */
+@media (forced-colors: active) {
+  .changed,
+  .current .tile {
+    border: 2px solid Highlight;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  summary:focus-visible,
+  a:focus-visible {
+    outline-color: Highlight;
+  }
+}
